@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIA BAKERY - Análisis Estratégico de Adquisición 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .header .date {
+            margin-top: 20px;
+            opacity: 0.7;
+            font-size: 0.9em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #2d3748;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title .emoji {
+            font-size: 1.2em;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .highlight-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .label {
+            color: #718096;
+            font-size: 0.95em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-card .detail {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #4a5568;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f7fafc;
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin: 0 5px;
+        }
+
+        .badge-success {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .badge-warning {
+            background: #feebc8;
+            color: #7c2d12;
+        }
+
+        .badge-info {
+            background: #bee3f8;
+            color: #2c5282;
+        }
+
+        .badge-danger {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        .journey-flow {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 2px solid #e2e8f0;
+        }
+
+        .journey-flow h4 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .flow-step .arrow {
+            margin: 0 15px;
+            color: #667eea;
+            font-size: 1.5em;
+        }
+
+        .flow-step .step {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .key-insight {
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .key-insight h4 {
+            color: #c05621;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .action-plan {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .action-plan h4 {
+            color: #22543d;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .action-plan ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .action-plan li {
+            margin: 8px 0;
+            color: #2f855a;
+        }
+
+        .budget-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .budget-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .budget-item .channel {
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .budget-item .amount {
+            font-size: 2em;
+            color: #667eea;
+            font-weight: 800;
+        }
+
+        .budget-item .percentage {
+            color: #718096;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin: 5px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 10px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .nav-menu {
+            background: white;
+            padding: 15px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-menu a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏪 NIA BAKERY</h1>
+            <div class="subtitle">Análisis Estratégico de Adquisición & Customer Journey</div>
+            <div class="date">📅 Mayo - Octubre 2025 | 📊 1,173 Clientes Encuestados</div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#resumen">📋 Resumen</a></li>
+                <li><a href="#datos">📊 Datos</a></li>
+                <li><a href="#insights">💡 Insights</a></li>
+                <li><a href="#estrategia">🎯 Estrategia</a></li>
+                <li><a href="#implementacion">🚀 Plan</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <!-- RESUMEN EJECUTIVO -->
+            <section id="resumen" class="section">
+                <h2 class="section-title">
+                    <span class="emoji">📋</span>
+                    Resumen Ejecutivo
+                </h2>
+
+                <div class="highlight-box">
+                    <h3>✅ Validación de Hipótesis</h3>
+                    <p style="font-size: 1.1em; line-height: 1.8;">
+                        Tu observación sobre TikTok, Google Maps y estacionalidad era <strong>100% correcta</strong> 
+                        y está respaldada por datos reales de 1,173 clientes encuestados en 2 períodos distintos.
+                    </p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="number">15.1%</div>
+                        <div class="label">TikTok</div>
+                        <div class="detail">🥇 Canal #1 en menciones</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">4.7%</div>
+                        <div class="label">Google Maps</div>
+                        <div class="detail">⚠️ Sorprendentemente bajo</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">119K</div>
+                        <div class="label">Interacciones GBP</div>
+                        <div class="detail">📍 Dato real de Google</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">70%</div>
+                        <div class="label">Caída Sept-Oct</div>
+                        <div class="detail">📉 Cambio de público</div>
+                    </div>
+                </div>
+
+                <div class="key-insight">
+                    <h4>💡 Descubrimiento Clave</h4>
+                    <p>Google Maps NO está "bajo" - está <strong>MAL MEDIDO</strong>. La discrepancia existe porque 
+                    <strong>turistas usan Maps para descubrir Y convertir</strong> (pero olvidan el canal), mientras 
+                    <strong>locales descubren en TikTok/IG y solo usan Maps para navegar</strong>.</p>
+                </div>
+            </section>
+
+            <!-- DATOS DUROS -->
+            <section id="datos" class="section">
+                <h2 class="section-title">
+                    <span class="emoji">📊</span>
+                    Datos de Adquisición
+                </h2>
+
+                <h3 style="margin: 30px 0 20px; color: #2d3748;">🏆 Ranking de Canales</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Canal</th>
+                            <th>Clientes</th>
+                            <th>%</th>
+                            <th>Perfil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🥇 1</td>
+                            <td><strong>TikTok</strong></td>
+                            <td>177</td>
+                            <td>15.1%</td>
+                            <td><span class="badge badge-info">Más joven (28.4 años)</span></td>
+                        </tr>
+                        <tr>
+                            <td>🥈 2</td>
+                            <td><strong>Recomendación</strong></td>
+                            <td>154</td>
+                            <td>13.1%</td>
+                            <td><span class="badge badge-success">Más local (68.8% COL)</span></td>
+                        </tr>
+                        <tr>
+                            <td>🥉 3</td>
+                            <td><strong>Instagram</strong></td>
+                            <td>147</td>
+                            <td>12.5%</td>
+                            <td><span class="badge badge-info">Mixto</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>Google Search</strong></td>
+                            <td>108</td>
+                            <td>9.2%</td>
+                            <td><span class="badge badge-info">Mixto</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><strong>Internet</strong></td>
+                            <td>72</td>
+                            <td>6.1%</td>
+                            <td><span class="badge badge-warning">Genérico</span></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><strong>Google Maps</strong></td>
+                            <td>55</td>
+                            <td>4.7%</td>
+                            <td><span class="badge badge-info">Más turista (56.6% INT)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin: 40px 0 20px; color: #2d3748;">👥 Perfil Demográfico por Canal</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="label">TikTok</div>
+                        <div class="number">28.4</div>
+                        <div class="detail">años promedio</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 88%"></div>
+                        </div>
+                        <div class="detail">88% tienen 18-34 años</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Instagram</div>
+                        <div class="number">31.7</div>
+                        <div class="detail">años promedio</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                        <div class="detail">70% tienen 18-34 años</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Google Search</div>
+                        <div class="number">34.7</div>
+                        <div class="detail">años promedio</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 59%"></div>
+                        </div>
+                        <div class="detail">59% tienen 18-34 años</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="label">Google Maps</div>
+                        <div class="number">33.5</div>
+                        <div class="detail">años promedio</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 56.6%"></div>
+                        </div>
+                        <div class="detail">56.6% Internacional</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INSIGHTS CRÍTICOS -->
+            <section id="insights" class="section">
+                <h2 class="section-title">
+                    <span class="emoji">💡</span>
+                    Insights Críticos
+                </h2>
+
+                <h3 style="margin: 30px 0 20px; color: #2d3748;">🎭 Dos Públicos, Dos Journeys</h3>
+
+                <div class="journey-flow">
+                    <h4>🌍 TURISTA EXTRANJERO (Temporada Alta)</h4>
+                    <div class="flow-step">
+                        <div class="step">Google Maps Search<br/>"coffee near me"</div>
+                        <div class="arrow">→</div>
+                        <div class="step">Perfil GBP<br/>fotos, reviews</div>
+                        <div class="arrow">→</div>
+                        <div class="step">Click "Cómo llegar"<br/>CONVERSIÓN</div>
+                        <div class="arrow">→</div>
+                        <div class="step">Visita física<br/>mismo día</div>
+                    </div>
+                    <p style="margin-top: 15px; color: #4a5568;"><strong>Tiempo de decisión:</strong> 30 min - 2 horas | <strong>CPA:</strong> £0.82 | <strong>Tasa conversión:</strong> 36.55%</p>
+                </div>
+
+                <div class="journey-flow">
+                    <h4>🇨🇴 LOCAL JOVEN (Temporada Baja)</h4>
+                    <div class="flow-step">
+                        <div class="step">TikTok/Instagram<br/>descubrimiento</div>
+                        <div class="arrow">→</div>
+                        <div class="step">Sitio Web<br/>menú, precios</div>
+                        <div class="arrow">→</div>
+                        <div class="step">Consideración<br/>2-7 días</div>
+                        <div class="arrow">→</div>
+                        <div class="step">Google Maps<br/>navegación</div>
+                        <div class="arrow">→</div>
+                        <div class="step">Visita física</div>
+                    </div>
+                    <p style="margin-top: 15px; color: #4a5568;"><strong>Tiempo de decisión:</strong> 2-7 días | <strong>CPA:</strong> £5-9 | <strong>Valor:</strong> Cliente recurrente</p>
+                </div>
+
+                <div class="key-insight">
+                    <h4>🎯 La Paradoja de Google Maps Explicada</h4>
+                    <p><strong>Según Google My Business:</strong> 119,260 interacciones | 12,160 solicitudes de direcciones</p>
+                    <p><strong>Según encuesta:</strong> Solo 55 clientes (4.7%) dicen conocernos por Maps</p>
+                    <p style="margin-top: 15px;"><strong>¿Por qué?</strong> Los turistas usan Maps para TODO (discovery + conversión) en un solo momento y olvidan el canal. Los locales descubren en TikTok/IG días antes y solo usan Maps para navegar el día de la visita.</p>
+                </div>
+
+                <div class="key-insight">
+                    <h4>📉 Estacionalidad = Cambio de Público Dominante</h4>
+                    <p>La caída del 70% en Sept-Oct NO es solo "baja estacional". Es el cambio de:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>70% Turistas</strong> (alta intención, Google) → <strong>70% Locales</strong> (media intención, Social)</li>
+                        <li>Google Ads sigue activo pero ataca audiencia equivocada</li>
+                        <li>TikTok/IG NO están siendo explotados con pauta</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ESTRATEGIA -->
+            <section id="estrategia" class="section">
+                <h2 class="section-title">
+                    <span class="emoji">🎯</span>
+                    Estrategia Optimizada
+                </h2>
+
+                <div class="highlight-box">
+                    <h3>🔄 Cambio de Paradigma</h3>
+                    <p style="font-size: 1.1em; margin-bottom: 15px;"><strong>❌ ANTES:</strong> Estrategia uniforme todo el año → Caída 70% en baja</p>
+                    <p style="font-size: 1.1em;"><strong>✅ AHORA:</strong> Estrategia estacional dinámica → Compensar 40-60% de caída</p>
+                </div>
+
+                <h3 style="margin: 40px 0 20px; color: #2d3748;">💰 Presupuesto Anual: £14,400</h3>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Período</th>
+                            <th>Días</th>
+                            <th>Público Dominante</th>
+                            <th>Presupuesto</th>
+                            <th>Canales</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Jun-Ago (ALTA)</strong></td>
+                            <td>92</td>
+                            <td>75% Turistas</td>
+                            <td>£4,800 (33%)</td>
+                            <td>Google 75% | Social 25%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sept-Oct (BAJA)</strong></td>
+                            <td>61</td>
+                            <td>75% Locales</td>
+                            <td>£2,800 (19%)</td>
+                            <td>Social 70% | Google 30%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nov-May (MEDIA)</strong></td>
+                            <td>212</td>
+                            <td>50/50 Mix</td>
+                            <td>£6,800 (47%)</td>
+                            <td>Híbrido 50/50</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin: 40px 0 20px; color: #2d3748;">📱 Mix de Canales por Temporada</h3>
+
+                <div style="background: #f7fafc; padding: 25px; border-radius: 12px; margin: 20px 0;">
+                    <h4 style="color: #2d3748; margin-bottom: 20px;">TEMPORADA ALTA (Jun-Ago): £1,600/mes</h4>
+                    <div class="budget-breakdown">
+                        <div class="budget-item">
+                            <div class="channel">Google Ads 🇬🇧</div>
+                            <div class="amount">£800</div>
+                            <div class="percentage">50%</div>
+                        </div>
+                        <div class="budget-item">
+                            <div class="channel">Google Ads 🇪🇸</div>
+                            <div class="amount">£400</div>
+                            <div class="percentage">25%</div>
+                        </div>
+                        <div class="budget-item">
+                            <div class="channel">Instagram 📷</div>
+                            <div class="amount">£320</div>
+                            <div class="percentage">20%</div>
+                        </div>
+                        <div class="budget-item">
+                            <div class="channel">TikTok 🎵</div>
+                            <div class="amount">£80</div>
+                            <div class="percentage">5%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #f0fff4; padding: 25px; border-radius: 12px; margin: 20px 0; border: 2px solid #48bb78;">
+                    <h4 style="color: #22543d; margin-bottom: 20px;">TEMPORADA BAJA (Sept-Oct): £1,400/mes ⭐</h4>
+                    <div class="budget-breakdown">
+                        <div class="budget-item" style="border: 3px solid #48bb78;">
+                            <div class="channel">TikTok Ads 🎵</div>
+                            <div class="amount">£560</div>
+                            <div class="percentage">40% PRIORIDAD</div>
+                        </div>
+                        <div class="budget-item" style="border: 3px solid #48bb78;">
+                            <div class="channel">Instagram 📷</div>
+                            <div class="amount">£420</div>
+                            <div class="percentage">30% PRIORIDAD</div>
+                        </div>
+                        <div class="budget-item">
+                            <div class="channel">Google Ads 🇪🇸</div>
+                            <div class="amount">£350</div>
+                            <div class="percentage">25%</div>
+                        </div>
+                        <div class="budget-item">
+                            <div class="channel">Google Ads 🇬🇧</div>
+                            <div class="amount">£70</div>
+                            <div class="percentage">5%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IMPLEMENTACIÓN -->
+            <section id="implementacion" class="section">
+                <h2 class="section-title">
+                    <span class="emoji">🚀</span>
+                    Plan de Implementación
+                </h2>
+
+                <div class="action-plan">
+                    <h4>📅 NOVIEMBRE 2025 - Semana 1-2: Foundation</h4>
+                    <ul>
+                        <li>✅ Crear cuenta TikTok Ads Manager</li>
+                        <li>✅ Verificar Meta Business Suite configurado</li>
+                        <li>✅ Implementar UTM tracking en todos los enlaces</li>
+                        <li>✅ Crear promo codes: TIKT
